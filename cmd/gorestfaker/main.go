@@ -9,12 +9,12 @@ import (
 )
 
 var (
-	ServerPortStr string
-	ServerPort int = 8080
+	// ServerPort : Which port should the server listen on
+	ServerPort = 8080
 )
 
 func init() {
-	ServerPortStr = os.Getenv("SERVER_PORT")
+	ServerPortStr := os.Getenv("SERVER_PORT")
 	if len(ServerPortStr) > 0 {
 		port, err := strconv.Atoi(ServerPortStr)
 		if err != nil {
